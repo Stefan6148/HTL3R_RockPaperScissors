@@ -13,10 +13,13 @@ $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/src"), $i
 //$config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
 
 // database configuration parameters
-$conn = array(
-    'driver' => 'pdo_sqlite',
-    'path' => __DIR__ . '/db.sqlite',
+$connectionParams = array(
+    'dbname' => 'rockpaperscissors',
+    'user' => 'root',
+    'password' => '',
+    'host' => 'localhost',
+    'driver' => 'pdo_mysql',
 );
 
 // obtaining the entity manager
-$entityManager = EntityManager::create($conn, $config);
+$entityManager = EntityManager::create($connectionParams, $config);
