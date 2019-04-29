@@ -99,9 +99,19 @@ class Round
     }
 
     public function getAsArray(){
-        return ['id' => $this->getId(), 'player' => $this->getPlayer(), 'computer' => $this->getComputer(), 'timestamp' => date_format($this->getTimestamp(), 'd/m/Y H:i:s')];
+        return ['id' => $this->getId(), 'player' => $this->getChoiceAsString($this->getPlayer()), 'computer' => $this->getChoiceAsString($this->getComputer()), 'timestamp' => date_format($this->getTimestamp(), 'd/m/Y H:i:s'), 'outcome' => GameEvaluator::evaluate($this->player, $this->computer)];
     }
 
+    public function getChoiceAsString($choice){
+        switch ($choice){
+            case 0:
+                return "Rock";
+            case 1:
+                return "Paper";
+            case 2:
+                return "Scissors";
+        }
+    }
 
 
 }
