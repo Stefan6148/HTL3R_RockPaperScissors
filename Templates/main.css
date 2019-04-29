@@ -1,0 +1,29 @@
+img {
+    height: 150px;
+}
+
+#choice_cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card:hover{
+    background-color: lightblue;
+}
+
+.card{
+    margin-left: 10%;
+    width: 30%;
+}
+
+#out{
+    width: 100%;
+    text-align: center;
+}
+
+#cpu_choice{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

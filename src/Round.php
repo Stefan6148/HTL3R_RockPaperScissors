@@ -24,9 +24,15 @@ class Round
     /**
      * Round constructor.
      */
-    public function     __construct()
+
+    public function     __construct($player,$computer)
     {
+        $this->timestamp = new \DateTime();
+        $this->player = $player;
+        $this->computer = $computer;
+
     }
+
 
     /**
      * @return mixed
@@ -89,9 +95,12 @@ class Round
      */
     public function setTimestamp($timestamp)
     {
-        $this->timestamp = $timestamp;
+        $this->timestamp = new \DateTime();
     }
 
+    public function getAsArray(){
+        return ['id' => $this->getId(), 'player' => $this->getPlayer(), 'computer' => $this->getComputer(), 'timestamp' => date_format($this->getTimestamp(), 'd/m/Y H:i:s')];
+    }
 
 
 

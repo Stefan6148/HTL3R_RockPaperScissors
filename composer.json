@@ -1,0 +1,22 @@
+{
+    "name": "stefan/rock-paper-scissors",
+    "description": "A simple Rock/Paper/Scissors game produced for WEBT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Stefan Mikulik",
+            "email": "6148@htl.rennweg.at"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "HTL3R\\RockPaperScissors\\": "src/"
+        }
+    },
+    "require": {
+        "doctrine/orm": "^2.6",
+        "typo3fluid/fluid": "^2.6",
+        "phpunit/phpunit": "^8.0",
+        "ext-json": "*"
+    }
+}
