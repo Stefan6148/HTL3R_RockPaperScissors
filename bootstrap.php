@@ -4,6 +4,7 @@ use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 
 require_once "vendor/autoload.php";
+require_once "Config/Settings.php";
 
 // Create a simple "default" Doctrine ORM configuration for Annotations
 $isDevMode = true;
@@ -11,15 +12,6 @@ $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/src"), $i
 // or if you prefer yaml or XML
 //$config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
 //$config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
-
-// database configuration parameters
-$connectionParams = array(
-    'dbname' => 'rockpaperscissors',
-    'user' => 'root',
-    'password' => '',
-    'host' => 'localhost',
-    'driver' => 'pdo_mysql',
-);
 
 // obtaining the entity manager
 $entityManager = EntityManager::create($connectionParams, $config);
